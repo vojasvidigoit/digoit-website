@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cloud Solutions | DigoIT Solutions</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f7fa;
+      color: #18223a;
+      min-height: 100vh;
+    }
+       .unique-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 100;
+  padding: 0.6rem 2.2rem;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px) saturate(160%);
+  box-shadow: 0 8px 32px rgba(33,134,235,0.11), 0 1.5px 0 0 #2186eb1a;
+  border-bottom-left-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  transition: transform 0.38s cubic-bezier(.77,0,.18,1), background 0.18s;
+  transform: translateY(0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 72px;
+  max-height: 88px;
+}
+
+.unique-navbar.hide {
+  transform: translateY(-150%);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+}
+
+.navbar-left p{
+    font-size: 50px;
+    font-weight: bold;
+    color:blue;
+}
+.site-logo {
+  height: auto;
+  width: 100px;
+  border-radius: 15%;
+  object-fit: contain;
+  box-shadow: 0 2px 16px #2186eb25;
+  background: #fff;
+}
+
+.tagline {
+  font-size: 1.13rem;
+  color: #2186eb;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  background: linear-gradient(97deg,#a8e3e6 65%,#ffe172 100%);
+  padding: 0.34rem 1.1rem 0.34rem 0.9rem;
+  border-radius: 1.3rem;
+  box-shadow: 0 0.5px 8px #d9eafd7a;
+  margin-left: 0.05rem;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 1.45rem;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  position: relative;
+}
+
+.unique-navbar a {
+  display: flex;
+  align-items: center;
+  gap: 0.40rem;
+  font-weight: 600;
+  font-size: 1.09rem;
+  color: #ffffff;
+  padding: 0.52rem 1.3rem;
+  border-radius: 1.5rem;
+  text-decoration: none;
+  /* New vibrant blue gradient background */
+  background: linear-gradient(100deg,#b8d5f1 0%, #25b6fe 70%, #ffe172 100%);
+  box-shadow: 0 2px 16px 0 #2186eb25, 0 0.5px 8px #25b6fe15;
+  border: none;
+  transition: 
+    background 0.21s cubic-bezier(.55,0,.25,1),
+    color 0.15s, 
+    box-shadow 0.18s,
+    transform 0.11s;
+}
+
+.unique-navbar a:hover, 
+.unique-navbar a:focus {
+  background: linear-gradient(100deg, #25b6fe 0%, #2186eb 80%, #ffe172 100%);
+  color: #fff;
+  box-shadow: 0 4px 28px 0 #2186eb55, 0 0.5px 8px #ffe17255;
+  transform: scale(1.04) translateY(-2px);
+  outline: none;
+}
+
+.unique-navbar .nav-icon {
+  font-size: 1.18rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 900px) {
+  .unique-navbar {
+    padding: 0.4rem 0.7rem;
+  }
+  .navbar-left .tagline {
+    font-size: 1rem;
+    padding: 0.19rem 0.7rem 0.19rem 0.6rem;
+  }
+  .site-logo {
+    height: 36px;
+    width: 36px;
+  }
+  .navbar-links {
+    gap: 0.7rem;
+  }
+  .unique-navbar a {
+    font-size: 0.97rem;
+    padding: 0.32rem 0.8rem;
+  }
+}
+
+body {
+  padding-top: 90px; /* ensures content not hidden under navbar */
+}
+@media (max-width: 600px) {
+  .site-header {
+    padding: 0.7rem 0.9rem 0.3rem 0.9rem;
+  }
+  .site-logo {
+    width: 45px;
+  }
+  .tagline {
+    font-size: 0.92rem;
+  }
+}
+/* Reset and base styles */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+    .cloud-hero {
+      background: linear-gradient(120deg, #2186eb 65%, #ffe172 100%);
+      color: #fff;
+      padding: 3.1rem 1rem 2.2rem 1rem;
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cloud-hero h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      margin: 0 0 1.2rem 0;
+      letter-spacing: 0.01em;
+      text-shadow: 0 2px 24px #2186eb77;
+    }
+    .cloud-hero-img {
+      width: 95px;
+      height: 95px;
+      margin: 0 auto 1.2rem auto;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.8rem;
+      box-shadow: 0 2.5px 24px #0a5ec955;
+    }
+    .cloud-hero-bg {
+      position: absolute;
+      top: -40px; left: 0; width: 100%; height: 200px;
+      background: url('data:image/svg+xml;utf8,<svg width="1440" height="200" viewBox="0 0 1440 200" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="url(%23cloudgrad)" fill-opacity="0.14" d="M0,32L80,58.7C160,85,320,139,480,138.7C640,139,800,85,960,80C1120,75,1280,117,1360,138.7L1440,160L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/><defs><linearGradient id="cloudgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="%232186eb"/><stop offset="100%" stop-color="%23ffe172"/></linearGradient></defs></svg>');
+      background-size: cover;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .cloud-hero .cloud-hero-img {
+      z-index: 2;
+      position: relative;
+    }
+
+    .cloud-intro {
+  max-width: 700px;
+  margin: 2.1rem auto 2.3rem auto;
+  background: #ffffff;
+  border-radius: 1.3rem;
+  padding: 1.7rem 2rem 1.4rem 2rem;
+  text-align: center;
+  border: 2px solid transparent;
+
+  /* NEON BLUE + YELLOW GLOW */
+  box-shadow:
+    0 0 7px rgba(255, 230, 0, 0.8),
+    0 0 15px rgba(255, 230, 0, 0.6),
+    0 0 30px rgba(33, 134, 235, 0.7),
+    0 0 50px rgba(33, 134, 235, 0.65);
+}
+
+.cloud-intro p {
+  margin: 0.7rem 0 0 0;
+  font-size: 1.13rem;
+  color: #18223a;
+}
+    .cloud-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2.1rem;
+      max-width: 900px;
+      margin: 2.5rem auto 2rem auto;
+    }
+    .cloud-feature {
+      background: linear-gradient(120deg, #e6f1ff 80%, #ffe172 100%);
+      border-radius: 1.1rem;
+      box-shadow: 0 2.5px 12px #2186eb11;
+      padding: 1.3rem 1.3rem 1rem 1.3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 120px;
+      position: relative;
+    }
+    .cloud-feature .icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2186eb;
+    }
+    .cloud-feature h3 {
+      margin: 0 0 0.4rem 0;
+      font-size: 1.11rem;
+      color: #2186eb;
+      font-weight: 700;
+    }
+    .cloud-feature p {
+      margin: 0;
+      color: #444;
+      font-size: 1.01rem;
+    }
+    .cloud-industries {
+      max-width: 900px;
+      margin: 3rem auto 2rem auto;
+      padding: 1.7rem 1.5rem 1.5rem 1.5rem;
+      border-radius: 1.3rem;
+      background: linear-gradient(100deg,#e6f1ff 50%,#ffe172 100%);
+      box-shadow: 0 4px 24px #2186eb11;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .cloud-industries h2 {
+      margin-top: 0;
+      font-size: 1.22rem;
+      color: #2186eb;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.01em;
+    }
+    .cloud-industries-list {
+      display: flex;
+      gap: 2.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: 100%;
+    }
+    .cloud-industry {
+      min-width: 150px;
+      max-width: 180px;
+      margin-bottom: 1.2rem;
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2.5px 12px #2186eb13;
+      padding: 1.1rem 0.7rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 1.05rem;
+    }
+    .cloud-industry .icon {
+      font-size: 1.45rem;
+      margin-bottom: 0.4rem;
+    }
+    .cloud-industry b {
+      color: #2186eb;
+      font-size: 1.07rem;
+      margin-bottom: 0.11rem;
+    }
+    .cloud-why {
+      max-width: 900px;
+      margin: 2.8rem auto 2rem auto;
+      background: linear-gradient(115deg,#e6f1ff 70%,#ffe172 100%);
+      border-radius: 1.1rem;
+      box-shadow: 0 2.5px 12px #2186eb11;
+      padding: 2rem 1.5rem 1.4rem 1.9rem;
+    }
+    .cloud-why h2 {
+      color: #2186eb;
+      font-size: 1.17rem;
+      font-weight: 800;
+      margin-top: 0; margin-bottom: 1.1rem;
+    }
+    .cloud-why ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .cloud-why li {
+      font-size: 1.05rem;
+      color: #333;
+      margin-bottom: 0.6rem;
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 0.55em;
+    }
+    .cloud-why .icon {
+      font-size: 1.1em;
+      color: #2186eb;
+    }
+    .cloud-banner {
+      margin: 3.2rem auto 0 auto;
+      background: linear-gradient(90deg,#2186eb 60%,#25b6fe 80%,#ffcb05 100%);
+      color: #fff;
+      padding: 2.1rem 1rem 2.1rem 1rem;
+      text-align: center;
+      font-size: 1.33rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      border-radius: 1.2rem 1.2rem 0 0;
+      box-shadow: 0 2.5px 12px #2186eb11;
+      max-width: 900px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cloud-banner::before {
+      content: "";
+      position: absolute;
+      left: -40px; top: -40px; width: 110px; height: 110px;
+      background: rgba(255,255,255,0.09);
+      border-radius: 50%;
+      z-index: 1;
+      filter: blur(2px);
+    }
+    .cloud-banner span { position: relative; z-index: 2; }
+    /* Responsive */
+    @media (max-width: 950px) {
+      .cloud-intro, .cloud-industries, .cloud-why, .cloud-banner { max-width: 98vw; }
+      .cloud-features { max-width: 98vw; }
+    }
+    @media (max-width: 700px) {
+      .cloud-hero h1 { font-size: 1.3rem; }
+      .cloud-hero-img { width: 65px; height: 65px; font-size: 1.8rem;}
+      .cloud-features { grid-template-columns: 1fr; gap: 1rem 0;}
+      .cloud-intro, .cloud-industries, .cloud-why, .cloud-banner { padding-left: 0.7rem; padding-right: 0.7rem; }
+      .cloud-intro { padding: 1.1rem 0.7rem; }
+    }
+    /* ===== MOBILE OPTIMIZATION FOR CLOUD PAGE ===== */
+@media (max-width: 768px) {
+
+  /* Navbar adjustments */
+  .navbar-left p {
+    font-size: 30px;
+  }
+  .unique-navbar {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    height: auto;
+  }
+  .navbar-left {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .site-logo {
+    width: 55px;
+  }
+  .tagline {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.7rem;
+  }
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.4rem;
+    gap: 1rem;
+  }
+  .navbar-links a {
+    font-size: 0.95rem;
+    padding: 0.4rem 1rem;
+    background: linear-gradient(100deg,#25b6fe 0%, #2186eb 80%, #ffe172 100%);
+    color: #fff;
+    border-radius: 1.5rem;
+  }
+
+  /* Hero section */
+  .cloud-hero {
+    padding: 2rem 1rem;
+  }
+  .cloud-hero h1 {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    padding: 0 0.5rem;
+  }
+  .cloud-hero-img {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  /* Intro section */
+  .cloud-intro {
+    max-width: 95%;
+    padding: 1.2rem 1rem;
+  }
+  .cloud-intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Features section */
+  .cloud-features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 95%;
+    margin: 2rem auto;
+  }
+  .cloud-feature {
+    padding: 1rem;
+    text-align: left;
+  }
+  .cloud-feature h3 {
+    font-size: 1.05rem;
+  }
+  .cloud-feature p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Industries section */
+  .cloud-industries {
+    max-width: 95%;
+    padding: 1.2rem 1rem;
+  }
+  .cloud-industries h2 {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+  .cloud-industries-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  .cloud-industry {
+    width: 100%;
+    max-width: 280px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  /* Why Choose section */
+  .cloud-why {
+    max-width: 95%;
+    padding: 1.5rem 1rem;
+  }
+  .cloud-why h2 {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+  .cloud-why li {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Banner section */
+  .cloud-banner {
+    max-width: 95%;
+    font-size: 1.1rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ===== EXTRA SMALL SCREEN FIX (below 480px) ===== */
+@media (max-width: 480px) {
+  .navbar-left p {
+    font-size: 24px;
+  }
+  .tagline {
+    display: none;
+  }
+  .site-logo {
+    width: 45px;
+  }
+  .navbar-links a {
+    font-size: 0.9rem;
+    padding: 0.35rem 0.9rem;
+  }
+
+  .cloud-hero h1 {
+    font-size: 1.1rem;
+  }
+  .cloud-intro p,
+  .cloud-feature p,
+  .cloud-why li {
+    font-size: 0.9rem;
+  }
+  .cloud-banner {
+    font-size: 1rem;
+    padding: 1.3rem 0.8rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+    <nav class="unique-navbar" id="navbar">
+  <div class="navbar-left">
+    <img src="./DigoIT Logo.png" alt="DigoIT Solutions Pvt. Ltd." class="site-logo"/>
+    <span class="tagline">Empowering Ideas. Delivering Excellence.</span>
+    <p>Cloud</p>
+  </div>
+  <ul class="navbar-links">
+    <li><a href="./index.html"><span class="nav-icon">&#8962;</span> Home</a></li>
+  </ul>
+</nav>
+  <section class="cloud-hero">
+    <div class="cloud-hero-bg"></div>
+    <div class="cloud-hero-img">🌩️</div>
+    <h1>Empower Your Business with Scalable & Secure Cloud Solutions</h1>
+  </section>
+
+  <section class="cloud-intro">
+    <p>
+      At DigoIT Solutions, we enable organizations to move beyond traditional IT infrastructure with smart, scalable, and resilient cloud ecosystems. Whether it’s public, private, or hybrid cloud, our solutions ensure flexibility, performance, and cost efficiency — tailored to your business goals.
+    </p>
+  </section>
+
+  <section class="cloud-features">
+    <div class="cloud-feature">
+      <span class="icon">🔄</span>
+      <h3>Cloud Migration & Integration</h3>
+      <p>Seamlessly transition your applications, data, and workloads to the cloud with minimal disruption and maximum security.</p>
+    </div>
+    <div class="cloud-feature">
+      <span class="icon">🖥️</span>
+      <h3>Cloud Infrastructure Management</h3>
+      <p>End-to-end management of your cloud environment — ensuring uptime, scalability, and optimized resource utilization.</p>
+    </div>
+    <div class="cloud-feature">
+      <span class="icon">⚙️</span>
+      <h3>Cloud Application Development</h3>
+      <p>Design and deploy modern, cloud-native applications that enhance performance, speed, and user experience.</p>
+    </div>
+    <div class="cloud-feature">
+      <span class="icon">🚀</span>
+      <h3>DevOps & Automation</h3>
+      <p>Accelerate delivery cycles with DevOps pipelines, automated deployments, and continuous integration practices.</p>
+    </div>
+    <div class="cloud-feature">
+      <span class="icon">🔒</span>
+      <h3>Cloud Security & Compliance</h3>
+      <p>Protect your digital assets through robust access controls, encryption, and compliance with global security standards.</p>
+    </div>
+  </section>
+
+  <section class="cloud-industries">
+    <h2>Industries We Empower</h2>
+    <div class="cloud-industries-list">
+      <div class="cloud-industry">
+        <span class="icon">🏭</span>
+        <b>Manufacturing</b>
+        <span style="text-align: center;">Centralized data systems for connected factories</span>
+      </div>
+      <div class="cloud-industry">
+        <span class="icon">🏥</span>
+        <b>HCLS</b>
+        <span style="text-align: center;">Secure cloud storage and real-time data access</span>
+      </div>
+      <div class="cloud-industry">
+        <span class="icon">🛒</span>
+        <b>Retail</b>
+        <span style="text-align: center;">Scalable e-commerce platforms and analytics dashboards</span>
+      </div>
+      <div class="cloud-industry">
+        <span class="icon">💳</span>
+        <b>Finance</b>
+        <span style="text-align: center;">Secure, compliant cloud for sensitive transactions</span>
+      </div>
+      <div class="cloud-industry">
+        <span class="icon">🎓</span>
+        <b>Education</b>
+        <span style="text-align: center;">Virtual learning platforms and collaboration tools</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cloud-why">
+    <h2>Why Choose DigoIT for Cloud Solutions</h2>
+    <ul>
+      <li><span class="icon">☁️</span> Expertise across AWS, Microsoft Azure, and Google Cloud</li>
+      <li><span class="icon">🔄</span> Proven migration frameworks for minimal downtime</li>
+      <li><span class="icon">⏰</span> 24x7 cloud monitoring and performance optimization</li>
+      <li><span class="icon">🗂️</span> Tailored architectures for hybrid and multi-cloud environments</li>
+      <li><span class="icon">🔒</span> Security-first approach ensuring data integrity and compliance</li>
+    </ul>
+  </section>
+
+  <div class="cloud-banner">
+    <span>Innovate, Scale, and Succeed — With Cloud at the Core</span>
+  </div>
+</body>
+</html>
